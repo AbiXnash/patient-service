@@ -1,4 +1,4 @@
-package com.abx.patientservice;
+package com.abx.patientservice.service;
 
 import java.util.List;
 
@@ -12,7 +12,7 @@ import com.abx.patientservice.repository.PatientRepository;
 @Service
 public class PatientService {
 
-    private PatientRepository patientRepository;
+    private final PatientRepository patientRepository;
 
     public PatientService(PatientRepository patientRepository) {
 	this.patientRepository = patientRepository;
