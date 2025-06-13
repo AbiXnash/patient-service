@@ -18,6 +18,7 @@ public class GlobalExcpetionHandler {
     public ResponseEntity<Map<String, String>> handleValidation(MethodArgumentNotValidException e) {
 	Map<String, String> errors = new HashMap<>();
 	e.getBindingResult().getFieldErrors().forEach(error -> errors.put(error.getField(), error.getDefaultMessage()));
+
 	return ResponseEntity.badRequest().body(errors);
     }
 
@@ -26,6 +27,17 @@ public class GlobalExcpetionHandler {
 	Map<String, String> errors = new HashMap<>();
 	log.warn("Email already exists: {}", e.getMessage());
 	errors.put("message", "Email already exists!!");
+
 	return ResponseEntity.badRequest().body(errors);
     }
+
+    @ExceptionHandler(PatientNotFoundException.class)
+    public ResponseEntity<Map<String, String>> handlePatientNotFoundException(PatientNotFoundException e) {
+	Map<String, String> errors = new HashMap<>();
+	log.warn("Patient not found with ID: {}", e.getMessage());
+	errors.put("message", "Patient not found!!");
+
+	return ResponseEntity.badRequest().body(errors);
+    }
+
 }
