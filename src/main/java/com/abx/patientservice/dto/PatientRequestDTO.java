@@ -18,10 +18,10 @@ public class PatientRequestDTO {
     private String address;
 
     @NotBlank(message = "Date of Birth is required")
-    private String dateofBirth;
+    private String dateOfBirth;
 
-    @NotBlank(message = "Resigered Date is required")
-    private String resigeredDate;
+    @NotBlank(message = "Regsitered Date is required")
+    private String registeredDate;
 
     public String getName() {
 	return name;
@@ -47,20 +47,19 @@ public class PatientRequestDTO {
 	this.address = address;
     }
 
-    public String getDateofBirth() {
-	return dateofBirth;
+    public String getDateOfBirth() {
+	return dateOfBirth;
     }
 
-    public void setDateofBirth(String dateofBirth) {
-	this.dateofBirth = dateofBirth;
+    public void setDateofBirth(String dateOfBirth) {
+	this.dateOfBirth = dateOfBirth;
     }
 
-    public String getResigeredDate() {
-	return resigeredDate;
+    public String getRegisteredDate() {
+	return registeredDate;
     }
 
-    public void setResigeredDate(String resigeredDate) {
-	this.resigeredDate = resigeredDate;
+    public void setRegisteredDate(String registeredDate) {
+	this.registeredDate = registeredDate;
     }
-
 }
