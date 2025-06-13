@@ -42,43 +42,44 @@ public class Patient {
 	this.id = id;
     }
 
-    public @NotNull String getName() {
+    public String getName() {
 	return name;
     }
 
-    public void setName(@NotNull String name) {
+    public void setName(String name) {
 	this.name = name;
     }
 
-    public @NotNull @Email String getEmail() {
+    public String getEmail() {
 	return email;
     }
 
-    public void setEmail(@NotNull @Email String email) {
+    public void setEmail(String email) {
 	this.email = email;
     }
 
-    public @NotNull String getAddress() {
+    public String getAddress() {
 	return address;
     }
 
-    public void setAddress(@NotNull String address) {
+    public void setAddress(String address) {
 	this.address = address;
     }
 
-    public @NotNull LocalDate getDateOfBirth() {
+    public LocalDate getDateOfBirth() {
 	return dateOfBirth;
     }
 
-    public void setDateOfBirth(@NotNull LocalDate dateOfBirth) {
+    public void setDateOfBirth(LocalDate dateOfBirth) {
 	this.dateOfBirth = dateOfBirth;
     }
 
-    public @NotNull LocalDate getRegisteredDate() {
+    public LocalDate getRegisteredDate() {
 	return registeredDate;
     }
 
-    public void setRegistedDate(@NotNull LocalDate registeredDate) {
+    public void setRegisteredDate(LocalDate registeredDate) {
 	this.registeredDate = registeredDate;
     }
+
 }

@@ -53,7 +53,15 @@ public class PatientRequestDTO {
 	return dateOfBirth;
     }
 
-    public void setDateofBirth(String dateOfBirth) {
+    public void setDateOfBirth(String dateOfBirth) {
 	this.dateOfBirth = dateOfBirth;
+    }
+
+    public String getRegisteredDate() {
+	return registeredDate;
+    }
+
+    public void setRegisteredDate(String registeredDate) {
+	this.registeredDate = registeredDate;
     }
 }
