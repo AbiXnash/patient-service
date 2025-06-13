@@ -8,10 +8,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.validation.constraints.Digits;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
 
 @Entity
 public class Patient {
@@ -26,12 +24,6 @@ public class Patient {
     @Email
     @Column(unique = true)
     private String email;
-
-    @NotNull
-    @Size(min = 10, max = 10, message = "Phone number must be exactly 10 digits")
-    @Digits(integer = 10, fraction = 0, message = "Phone number must contain only digits")
-    @Column(unique = true)
-    private Integer phoneNumber;
 
     @NotNull
     private String address;
@@ -64,14 +56,6 @@ public class Patient {
 
     public void setEmail(@NotNull @Email String email) {
 	this.email = email;
-    }
-
-    public Integer getPhoneNumber() {
-	return phoneNumber;
-    }
-
-    public void setPhoneNumber(Integer phoneNumber) {
-	this.phoneNumber = phoneNumber;
     }
 
     public @NotNull String getAddress() {
