@@ -1,8 +1,13 @@
 package com.abx.patientservice.controller;
 
+import java.util.List;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.abx.patientservice.dto.PatientResponseDTO;
 import com.abx.patientservice.service.PatientService;
 
 @RestController
@@ -13,5 +18,11 @@ public class PatientController {
 
     public PatientController(PatientService patientService) {
 	this.patientService = patientService;
+    }
+
+    @GetMapping
+    public ResponseEntity<List<PatientResponseDTO>> getPatients() {
+	List<PatientResponseDTO> patients = patientService.getPatients();
+	return ResponseEntity.ok().body(patients);
     }
 }
