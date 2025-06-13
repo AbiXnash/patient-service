@@ -1,5 +1,7 @@
 package com.abx.patientservice.dto;
 
+import com.abx.patientservice.dto.validators.CreatePatientValidationGroup;
+
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
@@ -20,7 +22,7 @@ public class PatientRequestDTO {
     @NotBlank(message = "Date of Birth is required")
     private String dateOfBirth;
 
-    @NotBlank(message = "Regsitered Date is required")
+    @NotBlank(groups = CreatePatientValidationGroup.class, message = "Regsitered Date is required")
     private String registeredDate;
 
     public String getName() {
@@ -53,13 +55,5 @@ public class PatientRequestDTO {
 
     public void setDateofBirth(String dateOfBirth) {
 	this.dateOfBirth = dateOfBirth;
-    }
-
-    public String getRegisteredDate() {
-	return registeredDate;
-    }
-
-    public void setRegisteredDate(String registeredDate) {
-	this.registeredDate = registeredDate;
     }
 }
